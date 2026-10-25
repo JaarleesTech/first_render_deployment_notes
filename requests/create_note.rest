@@ -1,0 +1,9 @@
+# Create Note
+
+POST http://localhost:3001/api/notes 
+Content-Type: application/json
+
+{
+    "content": "I now created a note from rest client", 
+    "important": true
+}
