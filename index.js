@@ -16,10 +16,11 @@ const requestLogger = (request, response, next) => {
   next()
 }
 
-// Middleware that parses incoming JSON request bodies into JavaScript objects
+// Middlewares
 
 app.use(express.json())
 app.use(requestLogger)
+app.use(express.static('dist'))
 
 // Hardcoded notes array for demonstration
 
@@ -40,12 +41,6 @@ let notes = [
     important: true
   }
 ]
-
-// Define the root route
-
-app.get('/', (request, response) => {
-    response.send('<h1> This is the root route </h1>')
-})
 
 // return all notes
 
